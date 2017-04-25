@@ -1,6 +1,6 @@
 # [getmstatistic]() <img src="getmstatistic-striking-image.png" align="right" />
 
- _M_ is an aggregate heterogeneity statistic.  
+_M_ - An aggregate statistic, to identify systematic heterogeneity patterns and their direction of effect in meta-analysis 
  
 ## Overview
  
