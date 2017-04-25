@@ -11,7 +11,7 @@ build_script:
 env:
  global:
    - CRAN: http://cran.rstudio.com
-   - USE_RTOOLS: tru
+   - USE_RTOOLS: true
 
 notifications:
   email:
