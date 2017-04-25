@@ -37,7 +37,7 @@ devtools::install_github("magosil86/getmstatistic")
 
 ## Usage
 
-*  Take a look at an [example workflow](https://github.com/magosil86/getmstatistic/wiki)
+*  Take a look at an [example workflow](https://github.com/magosil86/getmstatistic/blob/master/vignettes/getmstatistic-tutorial.md)
 
 ## Details
 
@@ -46,21 +46,21 @@ devtools::install_github("magosil86/getmstatistic")
 
 ## Getting help
 
-To learn about mstatistic updates, report bugs, ask questions about the mstatistic, suggest new features or just interact with other users, sign up to the [getmstatistic]() google group.
+To suggest new features, learn about getmstatistic updates, report bugs, ask questions about the mstatistic, or just interact with other users, sign up to the [getmstatistic](https://groups.google.com/forum/#!forum/getmstatistic) mailing list.
 
+
+## Code of conduct
+Contributions are welcome. Please observe the [Contributor Code of Conduct](https://github.com/magosil86/getmstatistic/blob/master/CONDUCT.md) when participating in this project.
 
 ## References
-
 Harbord, R. M., & Higgins, J. P. T. (2008). Meta-regression in Stata. Stata Journal 8: 493‚Äì519.
 
 
 ## Acknowledgements.
-
 Roger M. Harbord’s metareg command for computation of standardized predicted random effects which are then incorporated into calculations for the _M_ statistics.
 
 
 ## Authors.
-
 Lerato E. Magosi, Jemma C. Hopewell and Martin Farrall.
 
 ## Maintainer.
