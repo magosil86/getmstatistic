@@ -1,14 +1,13 @@
 # Sample .travis.yml for R projects
 
 language: r
-warnings_are_errors: true
-sudo: required
+cache: packages
+sudo: false
 
-env:
- global:
-   - CRAN: http://cran.rstudio.com
+r:
+  - oldrel
+  - release
+  - devel
 
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+after_success:
+- Rscript -e 'covr::codecov()'
