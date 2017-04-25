@@ -4,9 +4,14 @@ language: r
 warnings_are_errors: true
 sudo: required
 
+build_script:
+  - travis-tool.sh install_github hadley/devtools
+  - travis-tool.sh install_deps
+  
 env:
  global:
    - CRAN: http://cran.rstudio.com
+   - USE_RTOOLS: tru
 
 notifications:
   email:
