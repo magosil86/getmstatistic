@@ -1,0 +1,21 @@
+citHeader("To cite getmstatistic in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Identifying Systematic Heterogeneity Patterns in Genetic Association Meta-analysis Studies {getmstatistic}",
+  author       = personList(as.person("Lerato E. Magosi"),
+                   as.person("Anuj Goel"),
+                   as.person("Jemma C. Hopewell"),
+                   as.person("Martin Farrall")),
+  journal      = "Plos Genetics",
+  year         = "2017",
+  volume       = "",
+  number       = "",
+  pages        = "--",
+  url          = "https://magosil86.github.io/getmstatistic/",
+
+  textVersion  =
+  paste("Lerato E. Magosi, Anuj Goel, Jemma C. Hopewell, Martin Farrall (2017).",
+        "Identifying Systematic Heterogeneity Patterns in Genetic Association Meta-analysis Studies.",
+        "Plos Genetics, Forthcoming.",
+        "URL https://magosil86.github.io/getmstatistic/.")
+) 

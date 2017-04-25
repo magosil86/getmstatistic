@@ -1,0 +1,48 @@
+Package: getmstatistic
+Title: Quantifying Systematic Heterogeneity in Meta-Analysis
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Lerato E", "Magosi", email = "lmagosi@well.ox.ac.uk", 
+    role = "aut",),
+    person("Jemma C", "Hopewell", email = "jemma.hopewell@ndph.ox.ac.uk", 
+    role = "aut"), 
+    person("Martin", "Farrall", email = "mfarrall@well.ox.ac.uk", 
+    role = "aut"),
+    person("Lerato E", "Magosi", email = "lmagosi@well.ox.ac.uk", 
+    role = "cre")
+    )
+Description: Quantifying systematic heterogeneity in meta-analysis using R.
+    The \code{M} statistic aggregates heterogeneity information across multiple
+    variants to, identify systematic heterogeneity patterns and their direction
+    of effect in meta-analysis. It's primary use is to identify outlier studies,
+    which either show "null" effects or consistently show stronger or weaker
+    genetic effects than average across, the panel of variants examined in a
+    GWAS meta-analysis. In contrast to conventional heterogeneity metrics
+    (Q-statistic, I-squared and tau-squared) which measure random heterogeneity
+    at individual variants, \code{M} measures systematic (non-random)
+    heterogeneity across multiple independently associated variants. Systematic
+    heterogeneity can arise in a meta-analysis due to differences in the study
+    characteristics of participating studies. Some of the differences may
+    include: ancestry, allele frequencies, phenotype definition, age-of-disease
+    onset, family-history, gender, linkage disequilibrium and quality control
+    thresholds. See the getmstatistic website for statistical theory,
+    documentation and examples.
+Depends: 
+    R (>= 3.1.0)
+License: MIT + file LICENSE
+URL: https://magosil86.github.io/getmstatistic/
+BugReports: https://github.com/magosil86/getmstatistic/issues
+LazyData: true
+Imports: 
+    ggplot2 (>= 1.0.1),
+    gridExtra (>= 0.9.1),
+    gtable (>= 0.1.2),
+    metafor (>= 1.9-6),
+    psych (>= 1.5.1),
+    stargazer (>= 5.1)
+Suggests: 
+    foreign (>= 0.8-62),
+    knitr (>= 1.10.5),
+    testthat (>= 0.9.1)
+RoxygenNote: 5.0.1.9000
+VignetteBuilder: knitr
