@@ -3,3 +3,4 @@
 ^README\.Rmd$
 ^getmstatistic-striking-image\.png$
 ^_config.yml$
+^\.travis\.yml$

@@ -1,3 +1,5 @@
+[![Travis-CI Build Status](https://travis-ci.org/magosil86/getmstatistic.svg?branch=master)](https://travis-ci.org/magosil86/getmstatistic)
+
 # [getmstatistic]() <img src="getmstatistic-striking-image.png" align="right" />
 
 _M_ - An aggregate statistic, to identify systematic heterogeneity patterns and their direction of effect in meta-analysis 
