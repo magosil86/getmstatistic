@@ -1,7 +1,7 @@
 ---
 title: "The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis."
 author: "Lerato E. Magosi"
-date: "2017-04-24"
+date: "2017-04-25"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis.}
@@ -16,7 +16,7 @@ vignette: >
 
 * Statistical heterogeneity can be described as consistent study effect-size differences among participating studies in a meta-analysis, across the array of genetic variants examined.
 
-* The getmstatistic function computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.
+* The getmstatistic function `?getmstatistic` computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.
 
 * M statistics are useful for identifying outlier studies which show null effects or consistently show stronger/weaker effects than average.
 
@@ -105,6 +105,7 @@ library(gridExtra)       # for generating tables
 # Basic M analysis using heartgenes214  --------------------------
 
 # heartgenes214 is a multi-ethnic GWAS meta-analysis dataset for coronary artery disease.
+# ?heartgenes214 to view the dataset documentation.
 
 head(heartgenes214)
 
@@ -112,6 +113,8 @@ head(heartgenes214)
 str(heartgenes)
 
 # Run M analysis on all 214 lead variants
+# To view getmstatistic documentation ?getmstatistic or ?getm
+
 getmstatistic_results <- getmstatistic(heartgenes214$beta_flipped, 
                                         heartgenes214$gcse, 
                                         heartgenes214$variants, 

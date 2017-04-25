@@ -146,7 +146,7 @@ hr {
 
 <ul>
 <li><p>Statistical heterogeneity can be described as consistent study effect-size differences among participating studies in a meta-analysis, across the array of genetic variants examined.</p></li>
-<li><p>The getmstatistic function computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.</p></li>
+<li><p>The getmstatistic function <code>?getmstatistic</code> computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.</p></li>
 <li><p>M statistics are useful for identifying outlier studies which show null effects or consistently show stronger/weaker effects than average.</p></li>
 </ul>
 
@@ -227,6 +227,7 @@ library(gridExtra)       # for generating tables
 # Basic M analysis using heartgenes214  --------------------------
 
 # heartgenes214 is a multi-ethnic GWAS meta-analysis dataset for coronary artery disease.
+# ?heartgenes214 to view the dataset documentation.
 
 head(heartgenes214)
 
@@ -234,6 +235,8 @@ head(heartgenes214)
 str(heartgenes)
 
 # Run M analysis on all 214 lead variants
+# To view getmstatistic documentation ?getmstatistic or ?getm
+
 getmstatistic_results &lt;- getmstatistic(heartgenes214$beta_flipped, 
                                         heartgenes214$gcse, 
                                         heartgenes214$variants, 
