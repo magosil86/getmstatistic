@@ -29,9 +29,18 @@ Systematic heterogeneity can arise in a meta-analysis due to differences in the 
 
 ```{r}
 # To install the development version from GitHub:
+
+# install devtools
 install.packages("devtools")
 
+# install getmstatistic
+library(devtools)
 devtools::install_github("magosil86/getmstatistic")
+
+# Load libraries
+library(getmstatistic)  # for calculating M statistics
+library(gridExtra)      # for generating tables
+
 ```
 
 
