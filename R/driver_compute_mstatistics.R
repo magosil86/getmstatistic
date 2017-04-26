@@ -119,8 +119,12 @@
 #'
 #' # Retrieve dataset of M statistics
 #' dframe <- getmstatistic_results$M_dataset
+#' 
+#' \donttest{
+#' 
 #' head(dframe)
 #' str(dframe)
+#'}
 #'
 #' # Retrieve dataset of stronger than average studies (significant at 5% level)
 #' getmstatistic_results$influential_studies_0_05
