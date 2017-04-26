@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^README\.md$
 ^getmstatistic-striking-image\.png$
 ^_config.yml$
 ^\.travis\.yml$
