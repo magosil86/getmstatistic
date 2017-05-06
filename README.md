@@ -50,7 +50,9 @@ library(gridExtra)      # for generating tables
 
 ## Details
 
-* Essentially, _M_ statistics are computed by aggregating standardized predicted random effects (SPREs). Read up about the statistical theory behind the _M_ statistic [here]().
+* Essentially, _M_ statistics are computed by aggregating standardized predicted random effects (SPREs). To read up about the statistical theory behind the _M_ statistic see:
+
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
 
 
 ## Getting help
