@@ -11,10 +11,10 @@ vignette: >
 
 
 
-## Background
+## What are systematic heterogeneity patterns?
 
 
-* Statistical heterogeneity can be described as consistent study effect-size differences among participating studies in a meta-analysis, across the array of genetic variants examined.
+* Systemtatic heterogeneity refers to consistent study effect-size differences among participating studies in a GWAS meta-analysis, across the panel of genetic variants examined.
 
 * The getmstatistic function `?getmstatistic` computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.
 
@@ -22,7 +22,7 @@ vignette: >
 
 ## Properties of the M-statistic
 
-* M's power to detect systematic heterogeneity patterns increases the number and strength of association of variants examined in the meta-analysis.
+* M's power to detect systematic heterogeneity patterns increases with the number, and strength of association, of variants examined in the meta-analysis.
 
 * Furthermore, M's power is relatively indepenent of the number of studies in a meta-analysis.
 
@@ -30,9 +30,8 @@ vignette: >
 
 
 
-#### For details about the statistical theory of the M statistic, see:
- Magosi LE, Goel A, Hopewell JC, Farrall M. Identifying Systematic Heterogeneity` Patterns in Genetic Association Meta-analysis Studies. Plos Genet. 2017; Forthcoming.
-
+#### See the M statistic paper for details on the statistical theory:
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
 
 
 #### This vignette walks through the steps involved in carrying out an M analysis
@@ -80,8 +79,7 @@ ancestry.
 
 #### The data was sourced from:
 
-Magosi LE, Goel A, Hopewell JC, Farrall M. Identifying Systematic Heterogeneity Patterns in 
-Genetic Association Meta-analysis Studies. Plos Genet. 2017; Forthcoming.
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
 
 
 ## The basics: Conducting an *M* analysis
