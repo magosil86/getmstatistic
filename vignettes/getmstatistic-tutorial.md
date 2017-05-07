@@ -47,7 +47,7 @@ Prior to conducting an M analysis:
 
 * apply a study-level genomic corrrection to the standard errors to minimize false positives.
 
-    For example: gcse <- se * sqrt(lambda)`
+    For example: `gcse <- se * sqrt(lambda)`
 
 
 
