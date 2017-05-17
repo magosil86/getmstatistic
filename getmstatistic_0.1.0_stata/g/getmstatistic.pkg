@@ -13,7 +13,7 @@ d see help {bf:getmstatistic}.
 d
 d Distribution-Date: 20170517
 d
-d Support: email lmagosi@well.ox.ac.uk or magosil86@gmail.com
+d Support: email lmagosi@well.ox.ac.uk
 f g/getmstatistic.ado
 f g/getmstatistic.sthlp
 f g/heartgenes214.dta
