@@ -1,4 +1,4 @@
-v3
+v 3
 d Identifying systematic heterogeneity patterns in genetic association meta-analysis studies 
 d Lerato E. Magosi, Jemma C. Hopewell and Martin Farrall
 d Wellcome Trust Centre for Human Genetics, University of Oxford, UK
