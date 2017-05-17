@@ -34,9 +34,10 @@ options(tibble.print_min = 4L, tibble.print_max = 4L)
 
 
 
-#### For details about the statistical theory of the M statistic, see:
- Magosi LE, Goel A, Hopewell JC, Farrall M. Identifying Systematic Heterogeneity` Patterns in Genetic Association Meta-analysis Studies. Plos Genet. 2017; Forthcoming.
-
+#### See the M statistic paper for details on the statistical theory:
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) 
+Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. 
+PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
 
 
 #### This vignette walks through the steps involved in carrying out an M analysis
@@ -84,8 +85,10 @@ ancestry.
 
 #### The data was sourced from:
 
-Magosi LE, Goel A, Hopewell JC, Farrall M. Identifying Systematic Heterogeneity Patterns in 
-Genetic Association Meta-analysis Studies. Plos Genet. 2017; Forthcoming.
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) 
+Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. 
+PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
+
 
 
 ## The basics: Conducting an *M* analysis

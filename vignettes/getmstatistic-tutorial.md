@@ -1,7 +1,7 @@
 ---
 title: "The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis."
 author: "Lerato E. Magosi"
-date: "2017-04-25"
+date: "2017-05-10"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis.}
@@ -11,10 +11,10 @@ vignette: >
 
 
 
-## What are systematic heterogeneity patterns?
+## Background
 
 
-* Systemtatic heterogeneity refers to consistent study effect-size differences among participating studies in a GWAS meta-analysis, across the panel of genetic variants examined.
+* Statistical heterogeneity can be described as consistent study effect-size differences among participating studies in a meta-analysis, across the array of genetic variants examined.
 
 * The getmstatistic function `?getmstatistic` computes M statistics to quantitatively describe systematic heterogeneity in meta-analysis.
 
@@ -22,7 +22,7 @@ vignette: >
 
 ## Properties of the M-statistic
 
-* M's power to detect systematic heterogeneity patterns increases with the number, and strength of association, of variants examined in the meta-analysis.
+* M's power to detect systematic heterogeneity patterns increases the number and strength of association of variants examined in the meta-analysis.
 
 * Furthermore, M's power is relatively indepenent of the number of studies in a meta-analysis.
 
@@ -31,7 +31,9 @@ vignette: >
 
 
 #### See the M statistic paper for details on the statistical theory:
-Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) 
+Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. 
+PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
 
 
 #### This vignette walks through the steps involved in carrying out an M analysis
@@ -47,7 +49,7 @@ Prior to conducting an M analysis:
 
 * apply a study-level genomic corrrection to the standard errors to minimize false positives.
 
-    For example: `gcse <- se * sqrt(lambda)`
+    For example: gcse <- se * sqrt(lambda)`
 
 
 
@@ -79,7 +81,10 @@ ancestry.
 
 #### The data was sourced from:
 
-Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
+Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the CARDIoGRAMplusC4D Consortium (2017) 
+Identifying systematic heterogeneity patterns in genetic association meta-analysis studies. 
+PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https://doi.org/10.1371/journal.pgen.1006755).
+
 
 
 ## The basics: Conducting an *M* analysis

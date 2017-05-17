@@ -63,11 +63,15 @@ draw_table <- function(body, heading, ...) {
 
 
   } else {
-    # tt <- gridExtra::ttheme_minimal()
+  
+    tt <- gridExtra::ttheme_default(
+        core=list(bg_params = list(fill = "white", col="black")),
+        colhead=list(bg_params = list(fill = "white", col="black")))
+  
     table <- gridExtra::tableGrob(
       
       body,
-      # theme = tt,
+      theme = tt,
       rows = NULL,
       ...
     )
