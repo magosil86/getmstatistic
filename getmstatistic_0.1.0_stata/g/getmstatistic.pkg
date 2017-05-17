@@ -7,7 +7,8 @@ d show "null" effects or consistently show stronger or weaker genetic effects th
 d across the panel of variants examined in a GWAS meta-analysis. In contrast to conventional 
 d heterogeneity metrics (Q-statistic, I-squared and tau-squared) which measure random 
 d heterogeneity at individual variants, the M-statistic measures systematic (non-random) 
-d heterogeneity across multiple independently associated variants.
+d heterogeneity across multiple independently associated variants. After installation, 
+d see help {bf:getmstatistic}.
 d
 d Distribution-Date: 20170517
 d

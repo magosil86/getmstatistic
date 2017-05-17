@@ -8,5 +8,6 @@ d on behalf of the CARDIoGRAMplusC4D Consortium (2017) Identifying systematic he
 d patterns in genetic association meta-analysis studies. PLoS Genet 13(5): e1006755. 
 d https://doi.org/10.1371/journal.pgen.1006755 
 d
-d Also see getmstatistic webpage. l getmstatistic https://magosil86.github.io/getmstatistic/
+d l getmstatistic https://magosil86.github.io/getmstatistic/
+t g getmstatistic scripts
 p getmstatistic Quantifying Systematic Heterogeneity in Meta-Analysis.
