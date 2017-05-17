@@ -6,3 +6,4 @@
 ^_config.yml$
 ^\.travis\.yml$
 ^CONDUCT.md$
+^cran-comments.md$
