@@ -28,25 +28,26 @@ Systematic heterogeneity can arise in a meta-analysis due to differences in the 
 
 * Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic)
 
+
+* Download the getmstatistic zip file: [getmstatistic_0.1.0_stata.zip](https://github.com/magosil86/getmstatistic/raw/master/getmstatistic_0.1.0_stata/getmstatistic_0.1.0_stata.zip)
+
 ```
-1. Download the getmstatistic zip file: [getmstatistic_0.1.0_stata.zip](https://github.com/magosil86/getmstatistic/raw/master/getmstatistic_0.1.0_stata/getmstatistic_0.1.0_stata.zip)
+1. Unzip the folder
 
-2. Unzip the folder
+2. Start stata
 
-3. Start stata
-
-4. Locate your personal directory where stata stores user generated files by typing: `sysdir`
+3. Locate your personal directory where stata stores user generated files by typing: `sysdir`
 sysdir
 
 on mac the ado/personal directory is likely to be at: ~/Library/Application Support/Stata/ado/personal/
 for linux: ~/ado/personal/ 
 for windows: c:\ado\personal\
 
-5. Copy getmstatistic.ado and getmstatistic.sthlp to the g sub-directory in personal
+4. Copy getmstatistic.ado and getmstatistic.sthlp to the g sub-directory in personal
 
-6. Type help getmstatistic in Stata to open the help file. 
+5. Type help getmstatistic in Stata to open the help file. 
 
-7. You're all set, getmstatistic is installed
+6. You're all set, getmstatistic is installed
 
 ```
 
