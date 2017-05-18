@@ -34,20 +34,27 @@ Systematic heterogeneity can arise in a meta-analysis due to differences in the 
 ```
 1. Unzip the folder
 
+Tip! the folder should contain the following files: getmstatistic.ado getmstatistic.sthlp heartgenes214.dta
+
 2. Start stata
 
 3. Locate your personal directory where stata stores user generated files by typing: `sysdir`
 sysdir
 
-on mac the ado/personal directory is likely to be at: ~/Library/Application Support/Stata/ado/personal/
+Tip! on mac the ado/personal directory is likely to be at: ~/Library/Application Support/Stata/ado/personal/
 for linux: ~/ado/personal/ 
 for windows: c:\ado\personal\
 
 4. Copy getmstatistic.ado and getmstatistic.sthlp to the g sub-directory in personal
 
-5. Type help getmstatistic in Stata to open the help file. 
+Tip! if the g sub-directory does not exist, that just means you do not have user generated commands
+that start with the letter g. In that case create a folder named g in the personal directory.
 
-6. You're all set, getmstatistic is installed
+5. Type help getmstatistic in Stata to open the getmstatistic help file.
+
+6. Load the example dataset: heartgenes214.dta
+
+7. You're all set, getmstatistic is installed, try some of the examples in the getmstatistic help file
 
 ```
 
