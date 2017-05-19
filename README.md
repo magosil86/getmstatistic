@@ -24,10 +24,18 @@ Systematic heterogeneity can arise in a meta-analysis due to differences in the 
 
 
 
-## Installation
+## Installation: Stata
 
-* Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic)
+* Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic) from SSC
 
+1. Start stata
+2. To install the getmstatistic stata module: `ssc install getmstatistic`
+3. To get the example dataset in your current working directory: `net get getmstatistic`
+4. You're all set, getmstatistic is installed, try some of the examples in the getmstatistic help file
+
+---
+
+* Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic) manually
 
 * Download the getmstatistic zip file: [getmstatistic_0.1.0_stata.zip](https://github.com/magosil86/getmstatistic/raw/master/getmstatistic_0.1.0_stata/getmstatistic_0.1.0_stata.zip)
 
@@ -58,7 +66,7 @@ that start with the letter g. In that case create a folder named g in the person
 
 ```
 
-* Install getmstatistic [**R** package](https://github.com/magosil86/getmstatistic)
+## Installation: getmstatistic [**R** package](https://github.com/magosil86/getmstatistic)
 
 ```{r}
 # To install the development version from GitHub:
