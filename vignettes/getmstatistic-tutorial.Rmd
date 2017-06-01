@@ -26,7 +26,7 @@ options(tibble.print_min = 4L, tibble.print_max = 4L)
 
 ## Properties of the M-statistic
 
-* M's power to detect systematic heterogeneity patterns increases the number and strength of association of variants examined in the meta-analysis.
+* M's power to detect systematic heterogeneity patterns increases with the number and strength of association of variants examined in the meta-analysis.
 
 * Furthermore, M's power is relatively indepenent of the number of studies in a meta-analysis.
 
@@ -53,7 +53,7 @@ Prior to conducting an M analysis:
 
 * apply a study-level genomic corrrection to the standard errors to minimize false positives.
 
-    For example: gcse <- se * sqrt(lambda)`
+    For example: `gcse <- se * sqrt(lambda)`
 
 
 
@@ -191,4 +191,71 @@ getmstatistic_results
 
 ```
 
+## Generating M statistic forest plots
 
+
+```
+library(metafor) # for conducting meta-analysis
+library(dplyr)   # for sorting data.frames
+
+# We shall use the results from the M analysis of the 214 lead variants in heartgenes214
+# As a reminder, here is the command below:
+getmstatistic_results <- getmstatistic(heartgenes214$beta_flipped, 
+                                        heartgenes214$gcse, 
+                                        heartgenes214$variants, 
+                                        heartgenes214$studies)
+
+
+# Sort getmstatistic_results dataframe by M statistics
+getm_res_srtd <- dplyr::arrange(getmstatistic_results$M_dataset, M)
+head(getm_res_srtd)
+
+
+# Add on the case and control fields 
+
+
+# First, drop duplicate study_names in the sorted getmsatistic_results
+getm_res_srtd_nodups <- subset(getm_res_srtd, getm_res_srtd$snp == 5)
+
+# Checking dimensions to confirm that we have 48 studies
+str(getm_res_srtd_nodups)
+
+# Second, drop duplicate study_names in heartgenes
+heartgenes214_nodups <- subset(heartgenes214, heartgenes214$variants == "chr14:75614504:I")
+str(heartgenes214_nodups)
+
+# Third, merge the two dataframes to add on the cases and controls
+getm_res_plus_cases_ctrls <- merge(getm_res_srtd_nodups, heartgenes214_nodups[, c("studies", "cases", "controls")], by.x="study_names_in", by.y="studies")
+
+# Sort data.frame by M statistics
+getm_res_plus_cases_ctrls_srtd <- dplyr::arrange(getm_res_plus_cases_ctrls, M)
+
+
+# Compute inverse-variance weighted fixed effects model
+# using fixed effects model to get variable box size
+metafor_results_fe <- metafor::rma.uni(yi = getm_res_plus_cases_ctrls_srtd[, "M"], sei = getm_res_plus_cases_ctrls_srtd[, "M_se"], weighted = T, slab = sprintf("%02.0f", getm_res_plus_cases_ctrls_srtd[, "study"]), method = "FE")
+metafor_results_fe
+
+
+# Compute inverse-variance weighted random effects model
+metafor_results_dl <- metafor::rma.uni(yi = getm_res_plus_cases_ctrls_srtd[, "M"], sei = getm_res_plus_cases_ctrls_srtd[, "M_se"], weighted = T, knha = T, slab = sprintf("%2.0f", getm_res_plus_cases_ctrls_srtd[, "study"]), method = "DL")
+metafor_results_dl
+
+
+# Plotting:
+
+# set margins
+par(mar=c(4,4,1,2))
+
+# generate forest plot
+forest(metafor_results_fe, xlim=c(-1.8, 1.6), at=c(-1, -0.5, 0, 0.5, 1), cex=0.66, xlab = "M statistic", ilab=cbind(getm_res_plus_cases_ctrls_srtd$cases, getm_res_plus_cases_ctrls_srtd$controls), ilab.xpos = c(-1.4,-1.1), ilab.pos = c(2,2), addfit=F)
+
+# Adding labels
+text(1.6, 50, "M statistic [95% CI]", pos=2, cex=0.66)
+text(-1.6, 50, "Cases", pos=4, cex=0.66)
+text(-1.39, 50, "Controls", pos=4, cex=0.66)
+text(-1.8, 50, "Study", pos=4, cex=0.66)
+
+```
+
+![getmstatistic_plots](fig/getmstatistic_vignette_forestplot_fig_even_smaller.png)

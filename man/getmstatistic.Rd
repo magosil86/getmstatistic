@@ -74,6 +74,7 @@ including random effects
         \item snp         , variant numbers
         \item beta_mean   , average variant effect size
         \item oddsratio   , average variant effect size as oddsratio
+        \item beta_n   , number of variants in each study
         }
   \item influential_studies_0_05 (dataframe) A dataset of influential studies 
        significant at the 5 percent level.

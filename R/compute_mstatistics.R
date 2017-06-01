@@ -616,11 +616,17 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
     
     mstatistic_results_incl_usta_mean_scatter_strength <- base::merge(mstatistic_results, usta_mean_scatter_strength[, -c(idx_ustamean, idx_usta_mean_se, idx_study)], by = "study_names")
     
+    mstatistic_dataset <- mstatistic_results_incl_usta_mean_scatter_strength[, c("study_names", "beta", "lambda_se", "variant_names", "usta_mean", "usta_sd", "usta_mean_se", 
+                                                           "usta_lb", "usta_ub", "bonf_pval_ustamean", "qval_ustamean", "tau2", "I2", "Q", "xb", "usta", 
+                                                           "xbu", "stdxbu", "hat", "study", "snp", "study_mean_beta", "oddsratio", "study_n_beta")]
+    
+    names(mstatistic_dataset) <- c("study_names_in", "beta_in", "lambda_se_in", "variant_names_in", "M", "M_sd", "M_se", "lowerbound", "upperbound", "bonfpvalue", "qvalue", "tau2", "I2", "Q", "xb", "usta", 
+                                                           "xbu", "stdxbu", "hat", "study", "snp", "beta_mean", "oddsratio", "beta_n")
     # View structure 
     base::writeLines("Structure for dataset of computed M statistics: ")
     base::writeLines("")
     
-    utils::str(mstatistic_results_incl_usta_mean_scatter_strength)
+    utils::str(mstatistic_dataset)
     base::writeLines("")
 
 	# -----------------------------------
@@ -632,7 +638,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 	M_crit_alpha_0_05 = mstat_threshold,
 	number_variants = nsnps,
 	number_studies = nstudies, 
-	M_dataset = mstatistic_results_incl_usta_mean_scatter_strength,
+	M_dataset = mstatistic_dataset,
 	influential_studies_0_05 = usta_mean_influential_studies,
 	weaker_studies_0_05 = usta_mean_underperforming_studies)
 	    
