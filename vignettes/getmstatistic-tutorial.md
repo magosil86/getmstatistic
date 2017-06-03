@@ -1,7 +1,7 @@
 ---
 title: "The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis."
 author: "Lerato E. Magosi"
-date: "2017-06-01"
+date: "2017-06-03"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis.}
@@ -24,9 +24,11 @@ vignette: >
 
 * M's power to detect systematic heterogeneity patterns increases with the number and strength of association of variants examined in the meta-analysis.
 
+* M statistics can be calculated using a panel of known lead variants independently associated with the trait of interest or the GWAS significant lead variants in a meta-analysis.
+
 * Furthermore, M's power is relatively indepenent of the number of studies in a meta-analysis.
 
-* The M statistic is can be applied to meta-analyses with few studies (e.g. 10 studies).
+* The M statistic can be applied to meta-analyses with few studies (e.g. 10 studies).
 
 
 
@@ -44,6 +46,8 @@ PLoS Genet 13(5): e1006755. [https://doi.org/10.1371/journal.pgen.1006755](https
 ## A few tips for a succesful M analysis
 
 Prior to conducting an M analysis: 
+
+* ensure that the variants that will be used to conduct the M analysis are independently associated with the trait of interest i.e. in linkage equilibrium.
 
 * ensure that the effect alleles for participating studies in the meta-analysis are aligned. This can be achieved by "flipping" the beta-values (i.e. multiply by -1) of misaligned effect alleles.
 

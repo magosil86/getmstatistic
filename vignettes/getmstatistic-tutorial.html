@@ -154,8 +154,9 @@ hr {
 
 <ul>
 <li><p>M&#39;s power to detect systematic heterogeneity patterns increases with the number and strength of association of variants examined in the meta-analysis.</p></li>
+<li><p>M statistics can be calculated using a panel of known lead variants independently associated with the trait of interest or the GWAS significant lead variants in a meta-analysis.</p></li>
 <li><p>Furthermore, M&#39;s power is relatively indepenent of the number of studies in a meta-analysis.</p></li>
-<li><p>The M statistic is can be applied to meta-analyses with few studies (e.g. 10 studies).</p></li>
+<li><p>The M statistic can be applied to meta-analyses with few studies (e.g. 10 studies).</p></li>
 </ul>
 
 <h4>See the M statistic paper for details on the statistical theory:</h4>
@@ -173,6 +174,7 @@ PLoS Genet 13(5): e1006755. <a href="https://doi.org/10.1371/journal.pgen.100675
 <p>Prior to conducting an M analysis: </p>
 
 <ul>
+<li><p>ensure that the variants that will be used to conduct the M analysis are independently associated with the trait of interest i.e. in linkage equilibrium.</p></li>
 <li><p>ensure that the effect alleles for participating studies in the meta-analysis are aligned. This can be achieved by &ldquo;flipping&rdquo; the beta-values (i.e. multiply by -1) of misaligned effect alleles.</p></li>
 <li><p>apply a study-level genomic corrrection to the standard errors to minimize false positives.</p>
 
