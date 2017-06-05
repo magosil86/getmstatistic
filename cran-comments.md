@@ -1,7 +1,11 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Used the CRAN template for the MIT license.
+* Substituted the statement: see the getmstatistic website
+    for statistical theory, documentation and examples. 
+
+with the statement: See <https://magosil86.github.io/getmstatistic/> 
+  for statistical statistical theory, documentation and examples.
   
 ## Test environments
 * local OS X install, R 3.1.0
