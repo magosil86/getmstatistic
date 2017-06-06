@@ -1,6 +1,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/magosil86/getmstatistic.svg?branch=master)](https://travis-ci.org/magosil86/getmstatistic)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/magosil86/getmstatistic/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/magosil86/getmstatistic.svg)](https://github.com/magosil86/getmstatistic/issues)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/getmstatistic)](https://cran.r-project.org/package=getmstatistic)
 
 
 # [getmstatistic]() <img src="getmstatistic-striking-image.png" align="right" />
