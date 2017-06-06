@@ -70,6 +70,14 @@ that start with the letter g. In that case create a folder named g in the person
 ## Installation: getmstatistic [**R** package](https://github.com/magosil86/getmstatistic)
 
 ```{r}
+# To install the release version from CRAN:
+install.packages("getmstatistic")
+
+# Load libraries
+library(getmstatistic)  # for calculating M statistics
+library(gridExtra)      # for generating tables
+
+
 # To install the development version from GitHub:
 
 # install devtools
