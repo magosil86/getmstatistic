@@ -12,14 +12,14 @@ Authors@R: c(
     role = "cre")
     )
 Description: Quantifying systematic heterogeneity in meta-analysis using R.
-    The \code{M} statistic aggregates heterogeneity information across multiple
+    The M statistic aggregates heterogeneity information across multiple
     variants to, identify systematic heterogeneity patterns and their direction
     of effect in meta-analysis. It's primary use is to identify outlier studies,
     which either show "null" effects or consistently show stronger or weaker
     genetic effects than average across, the panel of variants examined in a
     GWAS meta-analysis. In contrast to conventional heterogeneity metrics
     (Q-statistic, I-squared and tau-squared) which measure random heterogeneity
-    at individual variants, \code{M} measures systematic (non-random)
+    at individual variants, M measures systematic (non-random)
     heterogeneity across multiple independently associated variants. Systematic
     heterogeneity can arise in a meta-analysis due to differences in the study
     characteristics of participating studies. Some of the differences may

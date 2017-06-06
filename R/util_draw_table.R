@@ -21,6 +21,8 @@
 #' # note: not exported hence examples are not run
 #' library(gridExtra)
 #'
+#' \donttest{
+#'
 #' # Table of iris values
 #' iris_dframe <- head(iris)
 #' title_iris_dframe <- paste("Table: Length and width measurements (cm) of sepals ",
@@ -35,6 +37,7 @@
 #'                         "design and performance. ", sep="")
 #' table_influential_studies <-  draw_table(body = mtcars_dframe, 
 #'                                           heading = title_mtcars_dframe)
+#'}
 
 #' # @export
 draw_table <- function(body, heading, ...) {

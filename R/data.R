@@ -29,9 +29,10 @@
 #'       1: Not GWAS-significant, 2: GWAS-significant}
 #' }
 #'
-#' @source Magosi LE, Goel A, Hopewell JC, Farrall M. Identifying Systematic
-#'         Heterogeneity Patterns in Genetic Association Meta-analysis Studies. 
-#'         Plos Genet. 2017; Forthcoming.
+#' @source Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the 
+#'         CARDIoGRAMplusC4D Consortium (2017) Identifying systematic 
+#'         heterogeneity patterns in genetic association meta-analysis studies. 
+#'         PLoS Genet 13(5): e1006755. https://doi.org/10.1371/journal.pgen.1006755.
 #'
 #'         \url{https://magosil86.github.io/getmstatistic/}
 #'
