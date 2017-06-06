@@ -1,6 +1,6 @@
 Package: getmstatistic
 Title: Quantifying Systematic Heterogeneity in Meta-Analysis
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Lerato E", "Magosi", email = "lmagosi@well.ox.ac.uk", 
     role = "aut",),
