@@ -10,12 +10,12 @@ citEntry(entry = "Article",
   year         = "2017",
   volume       = "13",
   number       = "5",
-  pages        = "e1006755",
-  url          = "https://doi.org/10.1371/journal.pgen.1006755.",
+  pages        = "e1006755 https://doi.org/10.1371/journal.pgen.1006755",
+  url          = "https://magosil86.github.io/getmstatistic/",
 
   textVersion  =
   paste("Lerato E. Magosi, Anuj Goel, Jemma C. Hopewell, Martin Farrall (2017).",
         "Identifying Systematic Heterogeneity Patterns in Genetic Association Meta-analysis Studies.",
-        "Plos Genetics, 13(5): e1006755.",
-        "URL https://doi.org/10.1371/journal.pgen.1006755.")
+        "Plos Genetics, 13(5): e1006755 https://doi.org/10.1371/journal.pgen.1006755.",
+        "URL https://magosil86.github.io/getmstatistic/")
 ) 
