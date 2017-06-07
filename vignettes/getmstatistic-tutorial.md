@@ -1,7 +1,7 @@
 ---
 title: "The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis."
 author: "Lerato E. Magosi"
-date: "2017-06-03"
+date: "2017-06-07"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{The M statistic: A simple method to measure the impact of systematic heterogeneity in GWAS meta-analysis.}
@@ -117,7 +117,7 @@ library(gridExtra)       # for generating tables
 head(heartgenes214)
 
 # View the structure of the heartgenes214 dataset
-str(heartgenes)
+str(heartgenes214)
 
 # Run M analysis on all 214 lead variants
 # To view getmstatistic documentation ?getmstatistic or ?getm
