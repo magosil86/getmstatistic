@@ -543,7 +543,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
     base::names(usta_mean_influential_studies) <- c("Study", "M", "Bonferroni_pvalue")
     
     if (base::nrow(usta_mean_influential_studies) >= 1) {
-	    title_influential_studies <- "Table: M and Bonferroni p-values of systematically \nstronger studies at the 5% significant level."
+	    title_influential_studies <- "Table: M and Bonferroni p-values \nof systematically stronger studies \nat the 5% significant level."
 
 		filename_influential_studies <- base::paste0("table_influential_studies.tif")
 		grDevices::tiff(filename_influential_studies, width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
@@ -577,7 +577,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
     base::names(usta_mean_underperforming_studies) <- c("Study", "M", "Bonferroni_pvalue")
     
     if (base::nrow(usta_mean_underperforming_studies) >= 1) {    
-	    title_underperforming_studies <- "Table: M and Bonferroni p-values of systematically \nweaker studies at the 5% significant level"
+	    title_underperforming_studies <- "Table: M and Bonferroni p-values \nof systematically weaker studies \nat the 5% significant level"
 
 		filename_underperforming_studies <- base::paste0("table_underperforming_studies.tif")
 		grDevices::tiff(filename_underperforming_studies, width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
