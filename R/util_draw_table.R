@@ -79,9 +79,9 @@ draw_table <- function(body, heading, ...) {
       ...
     )
     
-    title <- grid::textGrob(heading, gp=grid::gpar(fontsize=12), just="centre")
+    title <- grid::textGrob(heading, gp=grid::gpar(fontsize=12), vjust=0)
     
-    padding <- grid::unit(0.4,"npc")
+    padding <- grid::unit(0.2,"npc")
     
     table <- gtable::gtable_add_rows(table, heights = grid::grobHeight(title) + padding, pos = 0)
     

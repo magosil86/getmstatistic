@@ -1,11 +1,12 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Substituted the statement: see the getmstatistic website
-    for statistical theory, documentation and examples. 
+* Separated the further arguments and example sections in 
+  the draw_table function for neater rendering of the pdf manual
+  
+* Improved wrapping of titles for the M statistic tables
 
-with the statement: See <https://magosil86.github.io/getmstatistic/> 
-  for statistical statistical theory, documentation and examples.
+* Updated citation
   
 ## Test environments
 * local OS X install, R 3.1.0
