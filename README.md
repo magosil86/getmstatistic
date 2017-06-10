@@ -2,7 +2,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/magosil86/getmstatistic/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/magosil86/getmstatistic.svg)](https://github.com/magosil86/getmstatistic/issues)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/getmstatistic)](https://cran.r-project.org/package=getmstatistic)
-
+[![CRAN_Logs_Rstudio](http://cranlogs.r-pkg.org/badges/getmstatistic)](http://cran.rstudio.com/web/packages/getmstatistic/index.html)
 
 # [getmstatistic]() <img src="getmstatistic-striking-image.png" align="right" />
 
