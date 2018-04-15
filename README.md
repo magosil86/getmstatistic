@@ -37,6 +37,17 @@ Systematic heterogeneity can arise in a meta-analysis due to differences in the 
 3. To get the example dataset in your current working directory: `net get getmstatistic`
 4. You're all set, getmstatistic is installed, try some of the examples in the getmstatistic help file
 
+Tip! getmstatistic depends on the following user-written Stata commands which can be installed
+ using `ssc install package-name` or findit `package-name`:
+
+* latabstat
+* metareg
+* savesome
+* tabstat
+* qqvalue
+
+A full list of getmstatistic dependencies can be found in the help file.
+
 ---
 
 * Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic) manually
