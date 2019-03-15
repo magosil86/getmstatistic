@@ -45,4 +45,3 @@ The study effect-sizes have been flipped to ensure alignment of the
 Standard errors were genomically corrected at the study-level.
 }
 \keyword{datasets}
-

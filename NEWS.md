@@ -1,4 +1,11 @@
-# getmstatistic 0.1.1.9000
+# getmstatistic 0.2.0.9000
+
+# getmstatistic 0.2.0
+
+## Minor improvements
+
+* Updated maintainer email address
+
 
 # getmstatistic 0.1.1
 

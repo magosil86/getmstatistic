@@ -28,6 +28,7 @@ prints tables without rownames.
  Thanks to Ryan Welch, 
 https://github.com/welchr/LocusZoom/issues/16
 }
+
 \examples{
 # note: not exported hence examples are not run
 library(gridExtra)
@@ -51,4 +52,3 @@ table_influential_studies <-  draw_table(body = mtcars_dframe,
 }
 # @export
 }
-
