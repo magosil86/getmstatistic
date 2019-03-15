@@ -52,7 +52,7 @@ A full list of getmstatistic dependencies can be found in the help file.
 
 * Install getmstatistic [**Stata** command](https://github.com/magosil86/getmstatistic) manually
 
-* Download the getmstatistic zip file: [getmstatistic_0.1.0_stata.zip](https://github.com/magosil86/getmstatistic/raw/master/getmstatistic_0.1.0_stata/getmstatistic_0.1.0_stata.zip)
+* Download the getmstatistic zip file: [getmstatistic_0.1.1_stata_ssc.zip](https://github.com/magosil86/getmstatistic/blob/master/getmstatistic_0.1.1_stata/getmstatistic_0.1.1_stata_ssc.zip)
 
 ```
 1. Unzip the folder
