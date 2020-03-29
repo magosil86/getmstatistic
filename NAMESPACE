@@ -2,4 +2,5 @@
 
 S3method(getmstatistic,default)
 S3method(print,getmstatistic)
+export(draw_table)
 export(getmstatistic)

@@ -117,7 +117,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
     
         if (tau2_method == "DL") {
 
-			metafor_res <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = T, knha = T, method = tau2_method)
+			metafor_res <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = TRUE, knha = TRUE, method = tau2_method)
 
 			if (metafor_res$b[1] < 0) {
 		
@@ -130,7 +130,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
         
         else {
 
-			metafor_res <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = T, knha = T, method = tau2_method, control=list(stepadj=0.5, maxiter=10000))
+			metafor_res <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = TRUE, knha = TRUE, method = tau2_method, control=list(stepadj=0.5, maxiter=10000))
 
 			if (metafor_res$b[1] < 0) {
 		
@@ -164,11 +164,11 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
         
         if (tau2_method == "DL") {
 
-			metafor_results <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = T, knha = T, method = tau2_method)        
+			metafor_results <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = TRUE, knha = TRUE, method = tau2_method)        
         } 
         else {
         
-			metafor_results <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = T, knha = T, method = tau2_method, control=list(stepadj=0.5, maxiter=10000))        
+			metafor_results <- metafor::rma.uni(yi = dframe_current_snp[, "beta"], sei = dframe_current_snp[, "lambda_se"], weighted = TRUE, knha = TRUE, method = tau2_method, control=list(stepadj=0.5, maxiter=10000))        
         }
         
         

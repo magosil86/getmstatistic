@@ -30,25 +30,30 @@ https://github.com/welchr/LocusZoom/issues/16
 }
 
 \examples{
-# note: not exported hence examples are not run
+
 library(gridExtra)
 
 \donttest{
 
 # Table of iris values
 iris_dframe <- head(iris)
-title_iris_dframe <- paste("Table: Length and width measurements (cm) of sepals ",
-                       "and petals, for 50 flowers from 3 species of iris ", 
-                       "(setosa, versicolor, and virginica). ", sep="")
-table_influential_studies <-  draw_table(body = iris_dframe, heading = title_iris_dframe)
+title_iris_dframe <- paste("Table: Length and width measurements (cm) of sepals and petals,",
+                            "for 50 flowers from 3 species of iris (setosa, versicolor,", 
+                            "and virginica).\\n", sep = " ")
+# Wrap title text at column 60
+title_iris_dframe <- sapply(strwrap(title_iris_dframe, width = 60, simplify = FALSE), 
+                            paste, collapse = "\\n")
+# Draw table
+table_influential_studies <- draw_table(body = iris_dframe, heading = title_iris_dframe)
 
-# Table of mtcars values 
-mtcars_dframe <- head(mtcars)
-title_mtcars_dframe <- paste("Table: Motor Trend US magazine (1974) automobile ",
-                        "statistics for fuel consumption, automobile ", 
-                        "design and performance. ", sep="")
-table_influential_studies <-  draw_table(body = mtcars_dframe, 
-                                          heading = title_mtcars_dframe)
+# Table of mtcars values
+title_mtcars_dframe <- paste("Table: Motor Trend US magazine (1974) automobile statistics", 
+                             "for fuel consumption, \\nautomobile design and performance.\\n", 
+                             sep = " ")
+# Wrap title text at column 60
+title_mtcars_dframe <- sapply(strwrap(title_mtcars_dframe, width = 60, simplify = FALSE), 
+                              paste, collapse = "\\n")
+# Draw table
+table_influential_studies <- draw_table(body = mtcars_dframe, heading = title_mtcars_dframe)
 }
-# @export
 }
