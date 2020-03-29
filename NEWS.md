@@ -5,7 +5,8 @@
 
 ## Minor improvements
 
-* Exported the draw_table function so that \donttest examples run successfully.
+* Exported the draw_table function so that it is available when
+  \donttest examples are run.
 
 
 # getmstatistic 0.2.0

@@ -454,11 +454,13 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
      
     
     
-   # Generate plots
+    # Generate plots
+
+    wd <- tempdir()
 
 	# Histogram of M statistics
 	filename_histogram_mstats <- base::paste0("Histogram_Mstatistics_", nstudies, "studies_", nsnps, "snps.tif")
-	grDevices::tiff(filename_histogram_mstats, width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+	grDevices::tiff(file.path(wd, filename_histogram_mstats), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
 	usta_mean_hist <- base::unique(mstatistic_results[, c("study_names", "usta_mean")])
 	graphics::hist(usta_mean_hist[, "usta_mean"], main="Histogram of M statistics", xlab="M statistics")
 	grDevices::dev.off()
@@ -514,7 +516,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 	x_axis_max <- base::max(base::log(usta_mean_scatter_strength$oddsratio))
 	
 	filename_mstats_vs_avg_effectsize <- base::paste0("Mstatistics_vs_average_variant_effectsize_", nstudies, "studies_", nsnps, "snps.tif")
-	grDevices::tiff(filename_mstats_vs_avg_effectsize, width = 23.35, height = 17.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+	grDevices::tiff(file.path(wd, filename_mstats_vs_avg_effectsize), width = 23.35, height = 17.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
 	h <- ggplot2::ggplot(usta_mean_scatter_strength, ggplot2::aes(base::log(oddsratio), usta_mean, colour = usta_mean, label = study_names)) + ggplot2::geom_point(size = 4.5) + ggplot2::geom_text(ggplot2::aes(label = study), hjust = 1.2, vjust = -0.5, size = 2.5, colour = "azure4") + ggplot2::scale_colour_gradientn(name = "M statistic", colours = grDevices::rainbow(11)) + ggplot2::scale_x_continuous(trans="log", limits=c(x_axis_min, x_axis_max), breaks=base::round(base::seq(x_axis_min, x_axis_max, x_axis_increment_in),x_axis_round_in), minor_breaks=ggplot2::waiver(), labels = base::round(base::exp(base::seq(x_axis_min, x_axis_max, x_axis_increment_in)),x_axis_round_in)) + ggplot2::theme_bw() + ggplot2::scale_fill_hue(c = 45, l = 40) + ggplot2::xlab("Average effect size (oddsratio)") + ggplot2::ylab("M statistic") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank(), panel.grid.major = ggplot2::element_blank()) + ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14), axis.text.x = ggplot2::element_text(size = 14)) + ggplot2::theme(axis.title.y = ggplot2::element_text(size = 14), axis.text.y = ggplot2::element_text(size = 14))
 	hi <- h + ggplot2::geom_hline(ggplot2::aes(yintercept = yval), data = dat_hlines, colour = "grey80", linetype = "dashed", lwd = 0.4) + ggplot2::theme(legend.text = ggplot2::element_text(size = 10)) + ggplot2::theme(legend.title = ggplot2::element_text(size = 12)) + ggplot2::theme(legend.position = "bottom")
 	base::print(hi + ggplot2::geom_hline(ggplot2::aes(yintercept = c(0,0)), data = dat_hlines, colour = "grey80", linetype = "solid", lwd = 0.4))
@@ -546,7 +548,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 	    title_influential_studies <- "Table: M and Bonferroni p-values \nof systematically stronger studies \nat the 5% significant level."
 
 		filename_influential_studies <- base::paste0("table_influential_studies.tif")
-		grDevices::tiff(filename_influential_studies, width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+		grDevices::tiff(file.path(wd, filename_influential_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
         table_influential_studies <- draw_table(body = usta_mean_influential_studies, heading = title_influential_studies)
         grDevices::dev.off()
     
@@ -580,7 +582,7 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 	    title_underperforming_studies <- "Table: M and Bonferroni p-values \nof systematically weaker studies \nat the 5% significant level"
 
 		filename_underperforming_studies <- base::paste0("table_underperforming_studies.tif")
-		grDevices::tiff(filename_underperforming_studies, width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+		grDevices::tiff(file.path(wd, filename_underperforming_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
         table_underperforming_studies <- draw_table(body = usta_mean_underperforming_studies, heading = title_underperforming_studies)
         grDevices::dev.off()
         
