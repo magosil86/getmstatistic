@@ -21,7 +21,7 @@
 #' 
 #' library(gridExtra)
 #'
-#' \donttest{
+#' \dontrun{
 #'
 #' # Table of iris values
 #' iris_dframe <- head(iris)
