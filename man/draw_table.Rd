@@ -33,7 +33,7 @@ https://github.com/welchr/LocusZoom/issues/16
 
 library(gridExtra)
 
-\donttest{
+\dontrun{
 
 # Table of iris values
 iris_dframe <- head(iris)
