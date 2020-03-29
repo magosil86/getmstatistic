@@ -35,6 +35,7 @@
 #' table_influential_studies <- draw_table(body = iris_dframe, heading = title_iris_dframe)
 #' 
 #' # Table of mtcars values
+#' mtcars_dframe <- head(mtcars)
 #' title_mtcars_dframe <- paste("Table: Motor Trend US magazine (1974) automobile statistics", 
 #'                              "for fuel consumption, \nautomobile design and performance.\n", 
 #'                              sep = " ")
