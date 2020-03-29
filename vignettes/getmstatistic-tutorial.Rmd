@@ -126,10 +126,15 @@ str(heartgenes214)
 # Run M analysis on all 214 lead variants
 # To view getmstatistic documentation ?getmstatistic or ?getm
 
-getmstatistic_results <- getmstatistic(heartgenes214$beta_flipped, 
-                                        heartgenes214$gcse, 
-                                        heartgenes214$variants, 
-                                        heartgenes214$studies)
+# Set directory to store plots, this can be a temporary directory e.g. `plots_dir <- tempdir()`
+# or a path to a directory of choice e.g. `plots_dir <- "~/Downloads"`
+plots_dir <- "~/Downloads"
+
+getmstatistic_results <- getmstatistic(heartgenes20_10studies$beta_flipped, 
+                                        heartgenes20_10studies$gcse, 
+                                        heartgenes20_10studies$variants, 
+                                        heartgenes20_10studies$studies,
+                                        save_dir = plots_dir)
 getmstatistic_results
 
 
@@ -178,6 +183,10 @@ M scatterplot: M statistics for each study in the meta-analysis (Y- axis) are pl
 # Subset the GWAS significant variants (p < 5e-08) in heartgenes214
 heartgenes44 <- subset(heartgenes214, heartgenes214$fdr214_gwas46 == 2)
 
+# Set directory to store plots, this can be a temporary directory e.g. `plots_dir <- tempdir()`
+# or a path to a directory of choice e.g. `plots_dir <- "~/Downloads"`
+plots_dir <- "~/Downloads"
+
 # Exploring getmstatistic options:
 #     Estimate heterogeneity using "REML", default is "DL"
 #     Modify x-axis of M scatterplot
@@ -186,9 +195,11 @@ getmstatistic_results <- getmstatistic(heartgenes44$beta_flipped,
                                         heartgenes44$gcse, 
                                         heartgenes44$variants, 
                                         heartgenes44$studies,
+                                        save_dir = plots_dir,
                                         tau2_method = "REML",
                                         x_axis_increment_in = 0.03, 
                                         x_axis_round_in = 3,
+                                        produce_plots = TRUE,
                                         verbose_output = TRUE)
 getmstatistic_results
 
@@ -204,10 +215,16 @@ library(dplyr)   # for sorting data.frames
 
 # We shall use the results from the M analysis of the 214 lead variants in heartgenes214
 # As a reminder, here is the command below:
+
+# Set directory to store plots, this can be a temporary directory e.g. `plots_dir <- tempdir()`
+# or a path to a directory of choice e.g. `plots_dir <- "~/Downloads"`
+plots_dir <- "~/Downloads"
+
 getmstatistic_results <- getmstatistic(heartgenes214$beta_flipped, 
                                         heartgenes214$gcse, 
                                         heartgenes214$variants, 
-                                        heartgenes214$studies)
+                                        heartgenes214$studies,
+                                        save_dir = plots_dir)
 
 
 # Sort getmstatistic_results dataframe by M statistics

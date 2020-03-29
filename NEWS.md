@@ -5,8 +5,14 @@
 
 ## Minor improvements
 
-* Exported the draw_table function so that it is available when
-  \donttest examples are run.
+* Exported the draw_table function to allow 
+  running of \donttest examples.
+  
+* Generating plots has been made optional to provide
+  more flexibility
+  
+* Plots generated when testing examples are saved in a 
+  temporary directory
 
 
 # getmstatistic 0.2.0

@@ -1,8 +1,15 @@
-## Resubmission
-This is a resubmission. In this version I have:
+## Release summary
 
-* Exported the draw_table function so that it is available when
-  \donttest examples are run.
+This is a minor release
+
+* Exported the draw_table function to allow 
+  running of \donttest examples.
+  
+* Generating plots has been made optional to provide
+  more flexibility
+  
+* Plots generated when testing examples are saved in a 
+  temporary directory
 
 
 ## Test environments

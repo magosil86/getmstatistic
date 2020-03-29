@@ -39,10 +39,12 @@ utils::globalVariables(c("usta_mean", "study_names", "study", "yval", "usta_lb",
 #   lambda_se_in              (numeric)   vector of standard errors genomically corrected at study-level, 
 #   study_names_in            (character) vector of study names, 
 #   variant_names_in          (character) vector of variant neames,
+#   save_dir                  (character) scalar giving a path to the directory where plots should be stored,
 #   tau2_method               (character) method to estimate heterogeneity: either "DL" or "REML",
 #   x_axis_increment_in       (numeric)   value by which x-axis of M scatterplot will be incremented,
-#   x_axis_round_in           (numeric)   value to which x-axis labels of M scatterplot will be rounded
-#
+#   x_axis_round_in           (numeric)   value to which x-axis labels of M scatterplot will be rounded,
+#   produce_plots             (boolean)   value to generate plots
+#   verbose_output            (boolean)   value to produce detailed output
 #
 # returns: a list containing:
 #
@@ -59,11 +61,10 @@ utils::globalVariables(c("usta_mean", "study_names", "study", "yval", "usta_lb",
 # ------------------------------------------------------------------------------------
 
 
-
 compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in, 
-                                 study_names_in, tau2_method = "DL",
+                                 study_names_in, save_dir = getwd(), tau2_method = "DL",
                                  x_axis_increment_in = 0.02, x_axis_round_in = 2,
-                                 verbose_output = FALSE) {
+                                 produce_plots = TRUE, verbose_output = FALSE) {
 
 	# Assemble dataset
 
@@ -456,14 +457,14 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
     
     # Generate plots
 
-    wd <- tempdir()
-
 	# Histogram of M statistics
-	filename_histogram_mstats <- base::paste0("Histogram_Mstatistics_", nstudies, "studies_", nsnps, "snps.tif")
-	grDevices::tiff(file.path(wd, filename_histogram_mstats), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
-	usta_mean_hist <- base::unique(mstatistic_results[, c("study_names", "usta_mean")])
-	graphics::hist(usta_mean_hist[, "usta_mean"], main="Histogram of M statistics", xlab="M statistics")
-	grDevices::dev.off()
+	if (produce_plots) {
+		filename_histogram_mstats <- base::paste0("Histogram_Mstatistics_", nstudies, "studies_", nsnps, "snps.tif")
+		grDevices::tiff(file.path(save_dir, filename_histogram_mstats), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+		usta_mean_hist <- base::unique(mstatistic_results[, c("study_names", "usta_mean")])
+		graphics::hist(usta_mean_hist[, "usta_mean"], main="Histogram of M statistics", xlab="M statistics")
+		grDevices::dev.off()
+	}
 	
 	# ** * **
 	
@@ -514,14 +515,16 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 	# Plotting - with study numbers
 	x_axis_min <- base::min(base::log(usta_mean_scatter_strength$oddsratio))
 	x_axis_max <- base::max(base::log(usta_mean_scatter_strength$oddsratio))
-	
-	filename_mstats_vs_avg_effectsize <- base::paste0("Mstatistics_vs_average_variant_effectsize_", nstudies, "studies_", nsnps, "snps.tif")
-	grDevices::tiff(file.path(wd, filename_mstats_vs_avg_effectsize), width = 23.35, height = 17.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
-	h <- ggplot2::ggplot(usta_mean_scatter_strength, ggplot2::aes(base::log(oddsratio), usta_mean, colour = usta_mean, label = study_names)) + ggplot2::geom_point(size = 4.5) + ggplot2::geom_text(ggplot2::aes(label = study), hjust = 1.2, vjust = -0.5, size = 2.5, colour = "azure4") + ggplot2::scale_colour_gradientn(name = "M statistic", colours = grDevices::rainbow(11)) + ggplot2::scale_x_continuous(trans="log", limits=c(x_axis_min, x_axis_max), breaks=base::round(base::seq(x_axis_min, x_axis_max, x_axis_increment_in),x_axis_round_in), minor_breaks=ggplot2::waiver(), labels = base::round(base::exp(base::seq(x_axis_min, x_axis_max, x_axis_increment_in)),x_axis_round_in)) + ggplot2::theme_bw() + ggplot2::scale_fill_hue(c = 45, l = 40) + ggplot2::xlab("Average effect size (oddsratio)") + ggplot2::ylab("M statistic") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank(), panel.grid.major = ggplot2::element_blank()) + ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14), axis.text.x = ggplot2::element_text(size = 14)) + ggplot2::theme(axis.title.y = ggplot2::element_text(size = 14), axis.text.y = ggplot2::element_text(size = 14))
-	hi <- h + ggplot2::geom_hline(ggplot2::aes(yintercept = yval), data = dat_hlines, colour = "grey80", linetype = "dashed", lwd = 0.4) + ggplot2::theme(legend.text = ggplot2::element_text(size = 10)) + ggplot2::theme(legend.title = ggplot2::element_text(size = 12)) + ggplot2::theme(legend.position = "bottom")
-	base::print(hi + ggplot2::geom_hline(ggplot2::aes(yintercept = c(0,0)), data = dat_hlines, colour = "grey80", linetype = "solid", lwd = 0.4))
-	grDevices::dev.off()
-	
+
+	if (produce_plots) {	
+		filename_mstats_vs_avg_effectsize <- base::paste0("Mstatistics_vs_average_variant_effectsize_", nstudies, "studies_", nsnps, "snps.tif")
+		grDevices::tiff(file.path(save_dir, filename_mstats_vs_avg_effectsize), width = 23.35, height = 17.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+		h <- ggplot2::ggplot(usta_mean_scatter_strength, ggplot2::aes(base::log(oddsratio), usta_mean, colour = usta_mean, label = study_names)) + ggplot2::geom_point(size = 4.5) + ggplot2::geom_text(ggplot2::aes(label = study), hjust = 1.2, vjust = -0.5, size = 2.5, colour = "azure4") + ggplot2::scale_colour_gradientn(name = "M statistic", colours = grDevices::rainbow(11)) + ggplot2::scale_x_continuous(trans="log", limits=c(x_axis_min, x_axis_max), breaks=base::round(base::seq(x_axis_min, x_axis_max, x_axis_increment_in),x_axis_round_in), minor_breaks=ggplot2::waiver(), labels = base::round(base::exp(base::seq(x_axis_min, x_axis_max, x_axis_increment_in)),x_axis_round_in)) + ggplot2::theme_bw() + ggplot2::scale_fill_hue(c = 45, l = 40) + ggplot2::xlab("Average effect size (oddsratio)") + ggplot2::ylab("M statistic") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank(), panel.grid.major = ggplot2::element_blank()) + ggplot2::theme(axis.title.x = ggplot2::element_text(size = 14), axis.text.x = ggplot2::element_text(size = 14)) + ggplot2::theme(axis.title.y = ggplot2::element_text(size = 14), axis.text.y = ggplot2::element_text(size = 14))
+		hi <- h + ggplot2::geom_hline(ggplot2::aes(yintercept = yval), data = dat_hlines, colour = "grey80", linetype = "dashed", lwd = 0.4) + ggplot2::theme(legend.text = ggplot2::element_text(size = 10)) + ggplot2::theme(legend.title = ggplot2::element_text(size = 12)) + ggplot2::theme(legend.position = "bottom")
+		base::print(hi + ggplot2::geom_hline(ggplot2::aes(yintercept = c(0,0)), data = dat_hlines, colour = "grey80", linetype = "solid", lwd = 0.4))
+		grDevices::dev.off()
+    }
+    	
 	# -----------------------------------
 	     
     
@@ -543,21 +546,23 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 
     usta_mean_influential_studies <- usta_mean_influential_studies[, c("study_names", "usta_mean", "bonf_pval_ustamean")]
     base::names(usta_mean_influential_studies) <- c("Study", "M", "Bonferroni_pvalue")
-    
-    if (base::nrow(usta_mean_influential_studies) >= 1) {
-	    title_influential_studies <- "Table: M and Bonferroni p-values \nof systematically stronger studies \nat the 5% significant level."
 
-		filename_influential_studies <- base::paste0("table_influential_studies.tif")
-		grDevices::tiff(file.path(wd, filename_influential_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
-        table_influential_studies <- draw_table(body = usta_mean_influential_studies, heading = title_influential_studies)
-        grDevices::dev.off()
+	if (produce_plots) {
     
-    } else {
-        base::writeLines("")
-        base::print("Table not generated as there were no influential \nstudies found at alpha = 0.05")
-    
+		if (base::nrow(usta_mean_influential_studies) >= 1) {
+			title_influential_studies <- "Table: M and Bonferroni p-values \nof systematically stronger studies \nat the 5% significant level."
+
+			filename_influential_studies <- base::paste0("table_influential_studies.tif")
+			grDevices::tiff(file.path(save_dir, filename_influential_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+			table_influential_studies <- draw_table(body = usta_mean_influential_studies, heading = title_influential_studies)
+			grDevices::dev.off()
+	
+		} else {
+			base::writeLines("")
+			base::print("Table not generated as there were no influential \nstudies found at alpha = 0.05")
+	
+		}
     }
-
 
 
 	# Latex output
@@ -577,21 +582,23 @@ compute_m_statistics <- function(beta_in, lambda_se_in, variant_names_in,
 
     usta_mean_underperforming_studies <- usta_mean_underperforming_studies[, c("study_names", "usta_mean", "bonf_pval_ustamean")]
     base::names(usta_mean_underperforming_studies) <- c("Study", "M", "Bonferroni_pvalue")
-    
-    if (base::nrow(usta_mean_underperforming_studies) >= 1) {    
-	    title_underperforming_studies <- "Table: M and Bonferroni p-values \nof systematically weaker studies \nat the 5% significant level"
+ 
+ 	if (produce_plots) {
+   
+		if (base::nrow(usta_mean_underperforming_studies) >= 1) {    
+			title_underperforming_studies <- "Table: M and Bonferroni p-values \nof systematically weaker studies \nat the 5% significant level"
 
-		filename_underperforming_studies <- base::paste0("table_underperforming_studies.tif")
-		grDevices::tiff(file.path(wd, filename_underperforming_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
-        table_underperforming_studies <- draw_table(body = usta_mean_underperforming_studies, heading = title_underperforming_studies)
-        grDevices::dev.off()
-        
-    } else {
-        base::writeLines("")
-        base::print("Table not generated as there were no \nunder-performing studies found at alpha = 0.05")
-    
+			filename_underperforming_studies <- base::paste0("table_underperforming_studies.tif")
+			grDevices::tiff(file.path(save_dir, filename_underperforming_studies), width = 17.35, height = 23.35, units = "cm", res = 300, compression = "lzw", pointsize = 14)
+			table_underperforming_studies <- draw_table(body = usta_mean_underperforming_studies, heading = title_underperforming_studies)
+			grDevices::dev.off()
+		
+		} else {
+			base::writeLines("")
+			base::print("Table not generated as there were no \nunder-performing studies found at alpha = 0.05")
+	
+		}
     }
-
 
 	# Latex output
 	base::writeLines("")
