@@ -11,10 +11,7 @@ This is a resubmission. In this version I have:
 * win-builder (devel and release)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
+There were no ERRORs, WARNINGs or NOTEs
 
-There was 1 NOTE:
-
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Lerato E Magosi <magosil86@gmail.com>'
-
+## Downstream dependencies
+There are currently no downstream dependencies for this package.

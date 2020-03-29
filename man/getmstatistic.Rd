@@ -167,7 +167,7 @@ getmstatistic_results$M_crit_alpha_0_05
 
 # Additional examples: These take a little bit longer to run
 
-\donttest{
+\dontrun{
 
 # Run M analysis on all 214 lead variants
 # heartgenes214 is a multi-ethnic GWAS meta-analysis dataset for coronary artery disease.
