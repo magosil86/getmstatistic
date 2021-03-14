@@ -130,10 +130,10 @@ str(heartgenes214)
 # or a path to a directory of choice e.g. `plots_dir <- "~/Downloads"`
 plots_dir <- "~/Downloads"
 
-getmstatistic_results <- getmstatistic(heartgenes20_10studies$beta_flipped, 
-                                        heartgenes20_10studies$gcse, 
-                                        heartgenes20_10studies$variants, 
-                                        heartgenes20_10studies$studies,
+getmstatistic_results <- getmstatistic(heartgenes214$beta_flipped, 
+                                        heartgenes214$gcse, 
+                                        heartgenes214$variants, 
+                                        heartgenes214$studies,
                                         save_dir = plots_dir)
 getmstatistic_results
 
