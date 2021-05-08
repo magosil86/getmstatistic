@@ -1,6 +1,6 @@
 Package: getmstatistic
 Title: Quantifying Systematic Heterogeneity in Meta-Analysis
-Version: 0.2.1.9000
+Version: 0.2.2
 Authors@R: c(
     person("Lerato E", "Magosi", email = "lmagosi@well.ox.ac.uk", 
     role = "aut",),
@@ -44,6 +44,7 @@ Suggests:
     foreign (>= 0.8-62),
     knitr (>= 1.10.5),
     testthat,
-    covr
-RoxygenNote: 6.1.1
+    covr,
+    rmarkdown
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr

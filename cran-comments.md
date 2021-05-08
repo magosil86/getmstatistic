@@ -2,19 +2,14 @@
 
 This is a minor release
 
-* Exported the draw_table function to allow 
-  running of \donttest examples.
-  
-* Generating plots has been made optional to provide
-  more flexibility
-  
-* Plots generated when testing examples are saved in a 
-  temporary directory
+* Added rmarkdown to suggested dependencies
 
 
 ## Test environments
-* local OS X install, R 3.5.2
+* local OS X install, R 4.0.4
 * ubuntu 16.04 (on travis-ci), R 3.6.2
+* r-hub: windows server 2008 R2, R devel
+* r-hub: ubuntu-gcc-release, fedora-clang-devel
 * win-builder (devel and release)
 
 ## R CMD check results

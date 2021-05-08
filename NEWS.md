@@ -1,4 +1,8 @@
-# getmstatistic 0.2.1.9000
+# getmstatistic 0.2.2
+
+## Minor improvements
+
+* Added rmarkdown to suggested dependencies
 
 
 # getmstatistic 0.2.1

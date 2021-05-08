@@ -4,7 +4,8 @@
 \name{heartgenes214}
 \alias{heartgenes214}
 \title{heartgenes214.}
-\format{A data frame with seven variables:
+\format{
+A data frame with seven variables:
 \describe{
 \item{\code{beta_flipped}}{Effect-sizes expressed as log odds ratios. Numeric}
 \item{\code{gcse}}{Standard errors}
@@ -14,7 +15,8 @@
 \item{\code{controls}}{Number of controls in each participating study}
 \item{\code{fdr214_gwas46}}{Flag indicating GWAS significant variants, 
       1: Not GWAS-significant, 2: GWAS-significant}
-}}
+}
+}
 \source{
 Magosi LE, Goel A, Hopewell JC, Farrall M, on behalf of the 
         CARDIoGRAMplusC4D Consortium (2017) Identifying systematic 
@@ -37,7 +39,7 @@ It comprises summary data (effect-sizes and their corresponding standard
     (P < 0.00005, FDR < 5\%). Of the 214 lead variants, 44 are genome-wide 
     significant (p < 5e-08). The meta-analysis dataset is based on 
     individuals of: African American, Hispanic American, East Asian, 
-    South Asian, Middle Eastern and European ancestry.
+    South Asian, Middle Eastern and European ancestry. 
 
 The study effect-sizes have been flipped to ensure alignment of the 
     effect alleles.

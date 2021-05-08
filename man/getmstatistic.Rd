@@ -10,10 +10,19 @@
 \usage{
 getmstatistic(beta_in, lambda_se_in, study_names_in, variant_names_in, ...)
 
-\method{getmstatistic}{default}(beta_in, lambda_se_in, study_names_in,
-  variant_names_in, save_dir = getwd(), tau2_method = "DL",
-  x_axis_increment_in = 0.02, x_axis_round_in = 2,
-  produce_plots = TRUE, verbose_output = FALSE, ...)
+\method{getmstatistic}{default}(
+  beta_in,
+  lambda_se_in,
+  study_names_in,
+  variant_names_in,
+  save_dir = getwd(),
+  tau2_method = "DL",
+  x_axis_increment_in = 0.02,
+  x_axis_round_in = 2,
+  produce_plots = TRUE,
+  verbose_output = FALSE,
+  ...
+)
 }
 \arguments{
 \item{beta_in}{A numeric vector of study effect-sizes e.g. log odds-ratios.}
@@ -101,7 +110,7 @@ than average, across the panel of variants examined in a GWAS meta-analysis.
 In contrast to conventional heterogeneity metrics (Q-statistic, I-squared and 
 tau-squared) which measure random heterogeneity at individual variants, 
 \emph{M} measures systematic (non-random) heterogeneity across multiple 
-independently associated variants.
+independently associated variants. 
 
 Systematic heterogeneity can arise in a meta-analysis due to differences in 
 the study characteristics of participating studies. Some of the differences 
