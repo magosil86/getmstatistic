@@ -7,7 +7,7 @@ This is a minor release
 
 ## Test environments
 * local OS X install, R 4.0.4
-* ubuntu 16.04 (on travis-ci), R 3.6.2
+* ubuntu 16.04 (on travis-ci), oldrel, devel, release R 4.0.2
 * r-hub: windows server 2008 R2, R devel
 * r-hub: ubuntu-gcc-release, fedora-clang-devel
 * win-builder (devel and release)
